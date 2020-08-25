@@ -15,15 +15,6 @@ struct ContentView: View {
     var cancelBag = Set<AnyCancellable>()
     
     var body: some View {
-        /*
-         self.viewModel.$posts.receive(on: DispatchQueue.main).sink(receiveValue: { [weak self] _ in
-             self?.tableView.reloadData()
-         }).store(in: &self.cancelBag)
-         */
-//        viewModel.$posts
-//            .receive(on: DispatchQueue.main)
-//            .sink(receiveValue: { })
-
         List(viewModel.posts) {
             Text($0.title)
         }

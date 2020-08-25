@@ -14,7 +14,7 @@ import SwiftUI
 class ViewController: UIViewController {
     var tableView = UITableView()
     
-    @ObservedObject var viewModel = ViewModel()
+    @ObservedObject var viewModel = VCViewModel()
     var cancelBag = Set<AnyCancellable>()
     
     override func viewDidLoad() {
