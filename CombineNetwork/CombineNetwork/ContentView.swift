@@ -11,18 +11,28 @@ import SwiftUI
 import UIKit
 
 struct ContentView: View {
-    @ObservedObject var viewModel = ViewModel()
+    @ObservedObject var viewModel: ViewModel
     var cancelBag = Set<AnyCancellable>()
     
     var body: some View {
-        VStack {
-           Text("")
+        /*
+         self.viewModel.$posts.receive(on: DispatchQueue.main).sink(receiveValue: { [weak self] _ in
+             self?.tableView.reloadData()
+         }).store(in: &self.cancelBag)
+         */
+//        viewModel.$posts
+//            .receive(on: DispatchQueue.main)
+//            .sink(receiveValue: { })
+
+        List(viewModel.posts) {
+            Text($0.title)
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(viewModel: ViewModel())
+
     }
 }

@@ -8,6 +8,7 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 enum HTTPError: LocalizedError {
     case statusCode
@@ -19,6 +20,8 @@ struct Post: Codable, Identifiable {
     let title: String
     let body: String
     let userId: Int
+    
+    
 }
 
 let urlString = "https://jsonplaceholder.typicode.com/posts"
